@@ -1,0 +1,97 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 250px;
+}
+.navbar {
+  background: linear-gradient(to top right, black, #354EAD);
+  position: fixed !important;
+  width: 100%;
+  z-index: 1;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-image: url(assets/background-images/jake-blucker-BLoHqNkCeZg-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.btn {
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+.nav-link {
+  color: #fff !important;
+}
+.navbar-toggler {
+  border: 2px solid black !important;
+  background: #354EAD !important;
+}
+.todays-weather-container {
+  width: 40vw;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items : center;
+}
+.title {
+  font-size: 4rem;
+  position: relative;
+  
+  color: #fff;
+  text-decoration: underline;
+  text-underline-position: 5px;
+}
+.temp-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 15px solid #fff;
+  border-radius: 50%;
+  background: rgba(220, 220, 220, 70%);
+  color: #fff;
+  width: 300px;
+  height: 300px;
+  font-size: 3rem;
+}
+.temp-num {
+  font-size: 10rem;
+}
+.your-location {
+  font-size: 2rem;
+  color: #fff;
+}
+.todays-forecast {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  background: rgba(220, 220, 220, 70%);
+  margin-top: 24px;
+  padding: 8px;
+  gap: 16px;
+  border-radius: 10px;
+}
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fa-droplet {
+  margin-right: 8px;
+  font-size: .6rem;
+}
+
+
+
+
+
+
