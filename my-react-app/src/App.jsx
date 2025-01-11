@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TodaysWeather } from './components/TodaysWeather';
+import axios from 'axios';
 
 
 function App() {
@@ -15,12 +16,11 @@ function App() {
     { hour: '5am', deg: 5, icon: 'fa-solid fa-cloud-bolt', prep: 45 },
     { hour: '6am', deg: 4, icon: 'fa-solid fa-snowflake', prep: 36 }
   ]
+
   return (
     <>
-      <Navbar />ś
-      <Hero>
-        <TodaysWeather hourlyWeather={hourlyWeather} dayTempAvg={dayTempAvg} />
-      </Hero>
+      <Navbar />
+      <Hero hourlyWeather={hourlyWeather} dayTempAvg={dayTempAvg} />
     </>
   )
 }

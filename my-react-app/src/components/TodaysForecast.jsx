@@ -1,7 +1,7 @@
 import { HourlyWeather } from "./HourlyWeather"
 
 export function TodaysForecast(props) {
-  const {hourlyWeather} = props
+  const {hourlyWeather, weatherData} = props
   return (
     <div className="todays-forecast">
           <i className="fa-solid fa-chevron-left"></i>
