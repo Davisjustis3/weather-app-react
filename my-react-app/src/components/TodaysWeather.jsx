@@ -4,10 +4,10 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 export const TodaysWeather = (props) => {
-  const {hourlyWeather, dayTempAvg} = props
-  const [ location, setLocation ] = useState('Warsaw')
+  const {hourlyWeather} = props
+  const [location, setLocation] = useState('Venice')
   const [ weatherData, setWeatherData ] = useState({})
-  const [ error, setError ] = useState('')
+  const [ error, setError ] = useState('') 
   
   const apiKey = '5b47535472ad45dbb5b00954251001'
 

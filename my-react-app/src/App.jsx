@@ -3,10 +3,11 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TodaysWeather } from './components/TodaysWeather';
 import axios from 'axios';
+import { SectionTwo } from './components/SectionTwo';
 
 
 function App() {
-  const dayTempAvg = 10
+
   const hourlyWeather = [
     { hour: '12am', deg: 4, icon: 'fa-solid fa-cloud', prep: 56 },
     { hour: '1am', deg: 6, icon: 'fa-solid fa-sun', prep: 58 },
@@ -20,7 +21,8 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero hourlyWeather={hourlyWeather} dayTempAvg={dayTempAvg} />
+      <Hero hourlyWeather={hourlyWeather} />
+      <SectionTwo/>
     </>
   )
 }

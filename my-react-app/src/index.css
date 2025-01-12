@@ -101,8 +101,25 @@
   margin-right: 8px;
   font-size: .6rem;
 }
+.popular-city-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #cbcbcbb6;
+  gap: 20px;
+  padding: 50px 0;
+}
+.popular-city {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background: #fff;
+}
 
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 991px) {
   .title {
     font-size: 2rem
   }
@@ -110,6 +127,7 @@
     font-size: 1rem;
   }
   .temp-circle {
+    border: 10px solid #fff;
     width: 150px;
     height: 150px;
     font-size: 1rem;
@@ -120,9 +138,14 @@
   .todays-forecast {
     min-width: 400px;
     width: 30vw;
-    font-size: .5rem;
+    font-size: .7rem;
   }
+  .fa-droplet {
+  margin-right: 5px;
+  font-size: .4rem;
 }
+}
+
 @media screen and (max-width: 700px) {
   .title {
     font-size: 1.5rem
@@ -131,6 +154,7 @@
     font-size: .7rem;
   }
   .temp-circle {
+    border: 5px solid #fff;
     width: 100px;
     height: 100px;
     font-size: .7rem;
