@@ -4,25 +4,43 @@ import { Hero } from './components/Hero';
 import { TodaysWeather } from './components/TodaysWeather';
 import axios from 'axios';
 import { SectionTwo } from './components/SectionTwo';
-
+import { useEffect, useState } from "react"
 
 function App() {
-
-  const hourlyWeather = [
-    { hour: '12am', deg: 4, icon: 'fa-solid fa-cloud', prep: 56 },
-    { hour: '1am', deg: 6, icon: 'fa-solid fa-sun', prep: 58 },
-    { hour: '2am', deg: 7, icon: 'fa-solid fa-sun', prep: 63 },
-    { hour: '3am', deg: 6, icon: 'fa-solid fa-cloud', prep: 60 },
-    { hour: '4am', deg: 6, icon: 'fa-solid fa-cloud', prep: 54 },
-    { hour: '5am', deg: 5, icon: 'fa-solid fa-cloud-bolt', prep: 45 },
-    { hour: '6am', deg: 4, icon: 'fa-solid fa-snowflake', prep: 36 }
-  ]
-
+  const [weatherData, setWeatherData] = useState({})
+  const [location, setLocation] = useState('Warsaw')
+  
+  const apiKey = '5b47535472ad45dbb5b00954251001'
+  const apiURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&hourly=1`
+  const popularLocations = [
+    { city: 'Paris', image: 'assets/popular-locations/Paris.jpg'},
+    { city: 'New York', image: 'assets/popular-locations/NewYork.jpg' },
+    { city: 'Tokyo', image: 'assets/popular-locations/Tokyo.jpg' },
+    { city: 'Buenos Aires', image: 'assets/popular-locations/NewYork.jpg' },
+    { city: 'Lagos', image: 'assets/popular-locations/NewYork.jpg' },
+    { city: 'Beijing', image: 'assets/popular-locations/NewYork.jpg' },
+    { city: 'Toronto', image: 'assets/popular-locations/NewYork.jpg' },
+    { city: 'Mexico City', image: 'assets/popular-locations/NewYork.jpg' },
+    { city: 'Cape Town', image: 'assets/popular-locations/NewYork.jpg' },
+    { city: 'Vienna', image: 'assets/popular-locations/NewYork.jpg' },
+    { city: 'Dubai', image: 'assets/popular-locations/NewYork.jpg' },
+    { city: 'New Delhi', image: 'assets/popular-locations/NewYork.jpg' }]
+console.log(weatherData)
   return (
     <>
       <Navbar />
-      <Hero hourlyWeather={hourlyWeather} />
-      <SectionTwo/>
+      <Hero
+        popularLocations={popularLocations}
+        weatherData={weatherData}
+        setWeatherData={setWeatherData}
+        changeLocation={changeLocation}
+        apiURL={apiURL}
+        apiKey={apiKey}
+         />
+      <SectionTwo
+        changeLocation={changeLocation}
+        weatherData={weatherData}
+        popularLocations={popularLocations} />
     </>
   )
 }

@@ -4,19 +4,16 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 export const TodaysWeather = (props) => {
-  const {hourlyWeather} = props
-  const [location, setLocation] = useState('Venice')
-  const [ weatherData, setWeatherData ] = useState({})
+  const {changeWeather, apiKey, apiURL, hourlyWeather, weatherData, popularLocations, setWeatherData} = props
+  
   const [ error, setError ] = useState('') 
   
-  const apiKey = '5b47535472ad45dbb5b00954251001'
 
   const fetchWeather = async () => {
 
-    const apiURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&hour=1`
     try {
       const response = await axios.get(apiURL)
-      console.log('Weather Data:', response.data)
+      // console.log('Weather Data:', response.data)
       // const hourlyData = response.data.forecast[location].hourly;
       // console.log('Hourly data:', hourlyData)
       setWeatherData(response.data)
@@ -49,7 +46,10 @@ export const TodaysWeather = (props) => {
               <p className="loading-data-temp loading">Loading weather data...</p>
           }
         </div>
-        {<TodaysForecast hourlyWeather={hourlyWeather} weatherData={weatherData} />}
+        {<TodaysForecast
+          hourlyWeather={hourlyWeather}
+          weatherData={weatherData}
+          setWeatherData={setWeatherData}/>}
     </div>
     </>
   )

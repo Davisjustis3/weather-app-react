@@ -83,13 +83,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 500px;
-  width: 50vw;
+  max-width: 900px;
+  width: 70vw;
   background: rgba(220, 220, 220, 70%);
   margin-top: 24px;
-  padding: 8px;
+  padding: 8px 25px;
   gap: 16px;
   border-radius: 10px;
+  overflow-x: scroll;
 }
 .card-wrapper {
   display: flex;
@@ -116,9 +117,20 @@
   width: 400px;
   height: 400px;
   background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  background-position: center;
+  background-size: cover;
 }
-
-
+.popular-city div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #3148A0;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
 @media screen and (max-width: 991px) {
   .title {
     font-size: 2rem
