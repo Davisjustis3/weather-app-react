@@ -16,20 +16,12 @@ export const Navbar = () => {
                 <a className="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Popular Locations</a>
+                <a className="nav-link" href="#popular-locations">Popular Locations</a>
               </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  More
-                </a>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#">Blues near you</a></li>
-                   <li><hr className="dropdown-divider"/></li>
-                  <li><a className="dropdown-item" href="#">News</a></li>
-                  <li><hr className="dropdown-divider"/></li>
-                  <li><a className="dropdown-item" href="#">Artist of the month</a></li>
-                </ul>
+              <li className="nav-item">
+                <a className="nav-link" href="#artist-of-the-month">Artist of the Month</a>
               </li>
+              
             </ul>
             <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

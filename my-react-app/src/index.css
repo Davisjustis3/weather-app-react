@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  font-family: "Poppins", serif;
+  font-weight: 100;
+  font-style: normal;
+}
 .logo {
   width: 250px;
 }
@@ -22,6 +28,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  backdrop-filter: blur(20px);
 }
 .btn {
   color: #fff !important;
@@ -44,7 +51,7 @@
 .title {
   font-size: 3rem;
   position: relative;
-  background-color: rgba(20, 20, 20, 70%);
+  background: linear-gradient(to top right, black, #354EAD);
   color: #fff;
   text-decoration: underline;
   text-underline-position: 5px;
@@ -74,7 +81,7 @@
 }
 .your-location {
   font-size: 2rem;
-  background-color: rgba(20, 20, 20, 70%);
+  background: linear-gradient(to top right, black, #354EAD);
   color: #fff;
   border-radius: 10px;
   padding: 8px;
@@ -84,7 +91,6 @@
   justify-content: center;
   align-items: center;
   max-width: 900px;
-  width: 70vw;
   background: rgba(220, 220, 220, 70%);
   margin-top: 24px;
   padding: 8px 25px;
@@ -109,6 +115,7 @@
   background: #cbcbcbb6;
   gap: 20px;
   padding: 50px 0;
+  
 }
 .popular-city {
   display: flex;
@@ -122,14 +129,101 @@
   background-position: center;
   background-size: cover;
 }
-.popular-city div {
+.pop-loc-title {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+}
+.pop-city-temp {
+  background-color: rgba(220, 220, 220 80%);
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.feels-like {
+  margin-bottom: 0;
+}
+.pop-temp-container {
+  position: relative;
+  right: 80px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border: 3px solid #3148A0;
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 250px;
+  height: 200px;
+  background-color: rgb(170, 170, 170);
+  opacity: 0;
+  transition: all 1000ms;
+  overflow: hidden;
+  padding: 15px;
+  color: #fff;
+}
+.popular-city:hover .pop-temp-container {
+  display: flex;
+  right: 0;
+  opacity: 1; 
+}
+.info-container {
+  display: flex;
+  gap: 20px;
+}
+.feels-like-container {
+  display: flex;
+  flex-direction: column;
+}
+.pop-container-0,
+.Paris > h4 {
+  background: #9087BA;
+}
+.pop-container-1,
+.York > h4 {
+  background: rgba(10, 10, 10);
+}
+.pop-container-2,
+.Tokyo > h4 {
+  background: #3583B0;
+}
+.pop-container-3,
+.Buenos > h4 {
+  background: rgb(229, 160, 102);
+}
+.pop-container-4,
+.Lagos > h4 {
+  background: #848484;
+}
+.pop-container-5,
+.Beijing > h4 {
+  background: #628BC3;
+}
+.pop-container-6,
+.Toronto > h4 {
+  background: #C5B9B1;
+}
+.pop-container-7,
+.Mexico > h4 {
+  background: #ADADAD;
+}
+.pop-container-8,
+.Cape > h4 {
+  background: #659EB5;
+}
+.pop-container-9,
+.Vienna > h4 {
+  background: #7DA4F3;
+}
+.pop-container-10,
+.Dubai > h4 {
+  background: #888888;
+}
+.pop-container-11,
+.Delhi > h4 {
+  background: #262F36;
+}
+.image-icon {
+  height: 90px;
 }
 @media screen and (max-width: 991px) {
   .title {
@@ -180,6 +274,7 @@
     font-size: .8rem;
   }
 }
+
 
 
 

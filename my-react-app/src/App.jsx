@@ -13,18 +13,19 @@ function App() {
   const apiKey = '5b47535472ad45dbb5b00954251001'
   const apiURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&hourly=1`
   const popularLocations = [
-    { city: 'Paris', image: 'assets/popular-locations/Paris.jpg'},
-    { city: 'New York', image: 'assets/popular-locations/NewYork.jpg' },
-    { city: 'Tokyo', image: 'assets/popular-locations/Tokyo.jpg' },
-    { city: 'Buenos Aires', image: 'assets/popular-locations/NewYork.jpg' },
-    { city: 'Lagos', image: 'assets/popular-locations/NewYork.jpg' },
-    { city: 'Beijing', image: 'assets/popular-locations/NewYork.jpg' },
-    { city: 'Toronto', image: 'assets/popular-locations/NewYork.jpg' },
-    { city: 'Mexico City', image: 'assets/popular-locations/NewYork.jpg' },
-    { city: 'Cape Town', image: 'assets/popular-locations/NewYork.jpg' },
-    { city: 'Vienna', image: 'assets/popular-locations/NewYork.jpg' },
-    { city: 'Dubai', image: 'assets/popular-locations/NewYork.jpg' },
-    { city: 'New Delhi', image: 'assets/popular-locations/NewYork.jpg' }]
+    { city: 'Paris', image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
+    { city: 'New York', image: 'https://images.unsplash.com/photo-1503853585905-d53f628e46ac?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+    { city: 'Tokyo', image: 'https://images.pexels.com/photos/30159614/pexels-photo-30159614/free-photo-of-orange-train-crossing-urban-bridge-in-cityscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+    { city: 'Buenos Aires', image: 'https://images.unsplash.com/photo-1694560446249-240043f487bc?q=80&w=1986&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+    { city: 'Lagos', image: 'https://images.pexels.com/photos/30187862/pexels-photo-30187862/free-photo-of-elegant-woman-relaxing-on-lagos-beach-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+    {
+      city: 'Beijing', image: 'https://images.pexels.com/photos/2844316/pexels-photo-2844316.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+    { city: 'Toronto', image: 'https://images.unsplash.com/photo-1484446792163-1319e6f7a38f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+    { city: 'Mexico City', image: 'https://images.pexels.com/photos/12179305/pexels-photo-12179305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+    { city: 'Cape Town', image: 'https://images.pexels.com/photos/2316746/pexels-photo-2316746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+    { city: 'Vienna', image: 'https://images.pexels.com/photos/161074/vienna-st-charles-s-church-downtown-church-161074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+    { city: 'Dubai', image: 'https://images.pexels.com/photos/356286/pexels-photo-356286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+    { city: 'New Delhi', image: 'https://images.unsplash.com/photo-1598328195371-16d7ba4df37f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG5ldyUyMGRlbGhpfGVufDB8fDB8fHwy' }]
 console.log(weatherData)
   return (
     <>
@@ -33,12 +34,10 @@ console.log(weatherData)
         popularLocations={popularLocations}
         weatherData={weatherData}
         setWeatherData={setWeatherData}
-        changeLocation={changeLocation}
         apiURL={apiURL}
         apiKey={apiKey}
          />
       <SectionTwo
-        changeLocation={changeLocation}
         weatherData={weatherData}
         popularLocations={popularLocations} />
     </>

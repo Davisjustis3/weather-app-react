@@ -6,7 +6,7 @@ export function SectionTwo(props) {
   
   
   return (
-    <div className="popular-city-section">
+    <div id="popular-locations" className="popular-city-section">
       {<PopularLocations
           changeLocation={changeLocation}
           key={location.city}
