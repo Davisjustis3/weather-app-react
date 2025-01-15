@@ -5,7 +5,6 @@ export function PopularLocations(props) {
   const [weatherData, setWeatherData] = useState({});
 
   const apiKey = '5b47535472ad45dbb5b00954251001'
-  const apiURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&hourly=1`
 
   useEffect(() => {
     // Function to fetch weather data for a single city

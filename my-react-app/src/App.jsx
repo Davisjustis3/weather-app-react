@@ -5,11 +5,15 @@ import { TodaysWeather } from './components/TodaysWeather';
 import axios from 'axios';
 import { SectionTwo } from './components/SectionTwo';
 import { useEffect, useState } from "react"
+import { ArtistMonth } from './components/ArtistMonth';
+import { Footer } from './components/Footer';
 
 function App() {
   const [weatherData, setWeatherData] = useState({})
   const [location, setLocation] = useState('Warsaw')
-  
+  const changeLocation = (newLocation) => {
+    setLocation(newLocation);
+  }
   const apiKey = '5b47535472ad45dbb5b00954251001'
   const apiURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&hourly=1`
   const popularLocations = [
@@ -26,11 +30,35 @@ function App() {
     { city: 'Vienna', image: 'https://images.pexels.com/photos/161074/vienna-st-charles-s-church-downtown-church-161074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
     { city: 'Dubai', image: 'https://images.pexels.com/photos/356286/pexels-photo-356286.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
     { city: 'New Delhi', image: 'https://images.unsplash.com/photo-1598328195371-16d7ba4df37f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG5ldyUyMGRlbGhpfGVufDB8fDB8fHwy' }]
+  
+  const [ error, setError ] = useState('') 
+  const fetchWeather = async () => {
+
+    try {
+      const response = await axios.get(apiURL)
+      setWeatherData(response.data)
+      setError('')
+    } catch (error) {
+      console.error('Problem retrieving data:', error)
+      setError('Error retreiving weather data. Please try again.');
+      setWeatherData(null);
+    }
+  }
+  
+  useEffect(() => {
+    console.log('Location updated:', location)
+    fetchWeather()
+  }, [location])
 console.log(weatherData)
   return (
     <>
-      <Navbar />
+      <Navbar
+        fetchWeather={fetchWeather}
+        changeLocation={changeLocation}
+      />
       <Hero
+        fetchWeather={fetchWeather}
+        location={location}
         popularLocations={popularLocations}
         weatherData={weatherData}
         setWeatherData={setWeatherData}
@@ -40,8 +68,9 @@ console.log(weatherData)
       <SectionTwo
         weatherData={weatherData}
         popularLocations={popularLocations} />
+      <ArtistMonth />
+      <Footer/>
     </>
   )
 }
-
 export default App

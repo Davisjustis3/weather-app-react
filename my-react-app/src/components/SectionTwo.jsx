@@ -1,5 +1,4 @@
 import { PopularLocations } from "./PopularLocations";
-import { UpcomingEvents } from "./UpcomingEvents";
 
 export function SectionTwo(props) {
   const {changeLocation, weatherData, popularLocations} = props

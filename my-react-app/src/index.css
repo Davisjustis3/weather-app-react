@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", serif !important;
   font-weight: 100;
   font-style: normal;
 }
@@ -18,6 +18,9 @@ body {
   position: fixed !important;
   width: 100%;
   z-index: 1;
+}
+.search-form {
+  display: flex;
 }
 .hero {
   display: flex;
@@ -64,7 +67,7 @@ body {
   align-items: center;
   border: 15px solid #fff;
   border-radius: 50%;
-  background: rgba(220, 220, 220, 70%);
+  background: rgb(170, 170, 170, 80%);
   color: #fff;
   width: 300px;
   height: 300px;
@@ -90,19 +93,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 900px;
-  background: rgba(220, 220, 220, 70%);
+  background: rgb(170, 170, 170, 80%);
   margin-top: 24px;
-  padding: 8px 25px;
-  gap: 16px;
   border-radius: 10px;
-  overflow-x: scroll;
+  color: #fff;
 }
 .card-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 75px;
 }
 .fa-droplet {
   margin-right: 8px;
@@ -225,6 +226,40 @@ body {
 .image-icon {
   height: 90px;
 }
+.artist-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #262F36;
+  color: #fff;
+  padding: 50px;
+}
+.artist-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.artist-title {
+  font-size: 4rem;
+  text-decoration: underline;
+  text-underline-offset: 15px;
+  margin-bottom: 50px;
+}
+.artist-img {
+  height: 600px;
+  border-radius: 20px;
+}
+.artist-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  
+}
+.artist-text {
+  max-width: 800px;
+}
+
 @media screen and (max-width: 991px) {
   .title {
     font-size: 2rem

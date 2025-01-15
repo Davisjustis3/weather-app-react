@@ -1,9 +1,10 @@
 import React from "react"
+import { SearchBar } from "./SearchBar"
 
-export const Navbar = () => {
+export const Navbar = (props) => {
+  const {changeLocation} = props
   return (
     <>
-      
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#"><img className="logo" src="/src/assets/blues-sky-weather-app-high-resolution-logo-transparent.png" alt="logo" /></a>
@@ -23,10 +24,7 @@ export const Navbar = () => {
               </li>
               
             </ul>
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            {<SearchBar changeLocation={changeLocation} />}
           </div>
         </div>
   </nav>

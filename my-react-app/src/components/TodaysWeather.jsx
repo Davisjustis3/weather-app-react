@@ -4,36 +4,19 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 export const TodaysWeather = (props) => {
-  const {changeWeather, apiKey, apiURL, hourlyWeather, weatherData, popularLocations, setWeatherData} = props
+  const {fetchWeather, location, apiURL, hourlyWeather, weatherData, setWeatherData} = props
   
-  const [ error, setError ] = useState('') 
   
-
-  const fetchWeather = async () => {
-
-    try {
-      const response = await axios.get(apiURL)
-      // console.log('Weather Data:', response.data)
-      // const hourlyData = response.data.forecast[location].hourly;
-      // console.log('Hourly data:', hourlyData)
-      setWeatherData(response.data)
-      setError('')
-    } catch (err) {
-      console.error('Problem retrieving data:', err)
-      setError('Error retreiving weather data. Please try again.');
-      setWeatherData(null);
-    }
-  }
   useEffect(() => {
     fetchWeather()
-  }, [])
+  }, [location])
   return (
     <>
     <div className="todays-weather-container">
         <h1 className="title">Today's Weather</h1>
         {weatherData && weatherData.location ?
           <p className="your-location"><i className="fa-solid fa-location-dot"></i>
-            {weatherData.location.name} 
+            {location} 
           </p> :
           <p className="loading-data-location loading">Loading weather data...</p>
           }
