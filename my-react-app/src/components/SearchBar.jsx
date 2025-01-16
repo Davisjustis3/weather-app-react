@@ -11,6 +11,7 @@ export function SearchBar(props) {
     event.preventDefault();
     if (inputValue.trim()) {
       changeLocation(inputValue);
+      localStorage.setItem("Location", inputValue)
       setInputValue('');
     }
   }

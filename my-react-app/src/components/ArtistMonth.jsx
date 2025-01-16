@@ -22,7 +22,7 @@ export function ArtistMonth() {
           A true innovator and torchbearer of jazz, Emmet Cohen continues to inspire with his extraordinary talent and unwavering dedication to the music he loves.
         </p>
       </div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/oHSRrzTsRkI?si=BiyFXHU_wLIOS-NZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/oHSRrzTsRkI?si=BiyFXHU_wLIOS-NZ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
     </div>
   )
 }

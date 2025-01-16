@@ -12,7 +12,7 @@ export function HourlyWeather(props) {
             <span>{hour.time.split(" ")[1]}</span>
             {/* icon */}
             <span>{Math.floor(hour.temp_c)} deg</span>
-            <div>
+            <div className="chance-container">
               <span><i className='fa-solid fa-droplet'></i></span>
               <span>{hour.chance_of_snow}%</span>
             </div>

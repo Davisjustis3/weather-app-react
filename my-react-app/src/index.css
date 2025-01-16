@@ -4,6 +4,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 body {
   font-family: "Poppins", serif !important;
@@ -23,6 +27,7 @@ body {
   display: flex;
 }
 .hero {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,11 +36,15 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  backdrop-filter: blur(20px);
+  
 }
 .btn {
   color: #fff !important;
   border: 2px solid #fff !important;
+  display: flex !important;
+  justify-content: center !important;
+  padding: 6px 20px !important;
+
 }
 .nav-link {
   color: #fff !important;
@@ -95,8 +104,19 @@ body {
   align-items: center;
   background: rgb(170, 170, 170, 80%);
   margin-top: 24px;
-  border-radius: 10px;
+  border-radius: 20px;
   color: #fff;
+  max-width: 600px;
+  gap: 20px;
+}
+.chance-container {
+  display: flex;
+}
+.card-wrapper {
+  overflow-x: block !important;
+}
+.todays-forecast::-webkit-scrollbar {
+  display: visible !important;
 }
 .card-wrapper {
   display: flex;
@@ -116,7 +136,6 @@ body {
   background: #cbcbcbb6;
   gap: 20px;
   padding: 50px 0;
-  
 }
 .popular-city {
   display: flex;
@@ -259,7 +278,26 @@ body {
 .artist-text {
   max-width: 800px;
 }
-
+footer {
+  background: linear-gradient(to top right, black 30%, #354EAD);
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  padding: 50px 0 10px 0;
+}
+footer a {
+  text-decoration: none;
+  color: #324AA6;
+}
+.footer-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.social-links {
+  margin: 5px;
+}
 @media screen and (max-width: 991px) {
   .title {
     font-size: 2rem

@@ -10,7 +10,7 @@ import { Footer } from './components/Footer';
 
 function App() {
   const [weatherData, setWeatherData] = useState({})
-  const [location, setLocation] = useState('Warsaw')
+  const [location, setLocation] = useState(localStorage.getItem("Location") || 'Warsaw')
   const changeLocation = (newLocation) => {
     setLocation(newLocation);
   }
@@ -47,7 +47,12 @@ function App() {
   
   useEffect(() => {
     console.log('Location updated:', location)
+    const storedLocation = localStorage.getItem("Location");
+    if (storedLocation) {
+      setLocation(storedLocation); // Set state based on local storage
+    }
     fetchWeather()
+    
   }, [location])
 console.log(weatherData)
   return (
